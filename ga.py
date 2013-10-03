@@ -35,7 +35,11 @@ class Ga:
     def __init__(self, best, pops=25, ps=-1, mchance=1):
         import random as r
         self.pops = pops
+<<<<<<< HEAD
         self.pop = [[] for _ in range(self.pops)]
+=======
+        self.pop = [[] for _ in range(pops)]
+>>>>>>> 0dad256871c1c65bec2fdb28cf5f24cfd3584136
         self.mchance = mchance
         self.ps = ps
         self.best = best
@@ -62,7 +66,11 @@ class Ga:
         except:
             return "Error: Couldn't save file"
             
+<<<<<<< HEAD
     def load(self, filename):
+=======
+    def load (self, filename):
+>>>>>>> 0dad256871c1c65bec2fdb28cf5f24cfd3584136
         import cPickle as p
         try:
             filename += ".ga"
@@ -76,8 +84,11 @@ class Ga:
         a = int(math.floor(self.pops * self.amtToTrim))
         for x in range(0, a):
             self.pop.pop()
+<<<<<<< HEAD
         if a == 0:
             self.pop.pop()
+=======
+>>>>>>> 0dad256871c1c65bec2fdb28cf5f24cfd3584136
             
     def mutate(self, array):
         import random as r
@@ -85,6 +96,7 @@ class Ga:
         coord2 = r.randint(0, self.ps-1)
         array[coord1][coord2] = str(unichr(r.randint(self.bottom,self.top)))
         return array
+<<<<<<< HEAD
         
     def calculate(self):
         fitarray = [[] for _ in range(self.pops)]
@@ -96,5 +108,11 @@ class Ga:
 a = Ga("Hi")
 a.trim(a.pop)
 a.calculate()
+=======
+
+
+a = Ga("Hi", 12)
+a.trim(a.pop)
+>>>>>>> 0dad256871c1c65bec2fdb28cf5f24cfd3584136
 
 #if __name__ == "__main__":
